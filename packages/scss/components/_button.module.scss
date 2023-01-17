@@ -1,0 +1,8 @@
+@import "../tools";
+@import "../acss/mp";
+@import "../base/var.module";
+
+@include b('h-button') {
+  background-color: $primary-color;
+  padding: $common-padding;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@hare-ui/foo",
+  "version": "1.0.0",
+  "description": "示例组件",
+  "author": "Zymonody",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "@hare-ui/utils": "workspace:^1.0.0"
+  }
+}

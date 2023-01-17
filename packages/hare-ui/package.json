@@ -1,0 +1,20 @@
+{
+  "name": "@hare-ui/hare-ui",
+  "version": "1.0.0",
+  "description": "组件库入口",
+  "author": "Zymonody",
+  "main": "index.ts",
+  "scripts": {
+    "build": "rimraf ../../lib && vue-tsc --noEmit && vite build"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "@hare-ui/button": "workspace:^1.0.0",
+    "@hare-ui/foo": "workspace:^1.0.0"
+  },
+  "devDependencies": {
+    "rimraf": "^4.1.0",
+    "vite-plugin-dts": "^1.7.1"
+  }
+}
