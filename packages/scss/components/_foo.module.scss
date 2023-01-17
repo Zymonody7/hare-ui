@@ -3,7 +3,7 @@
 @import "../base/var.module";
 
 @include b('h-foo') {
-  color: $primary-color;
+  color: $h-primary;
 
   @include e('description') {
     color: #333333;

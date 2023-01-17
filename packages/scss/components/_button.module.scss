@@ -3,6 +3,7 @@
 @import "../base/var.module";
 
 @include b('h-button') {
-  background-color: $primary-color;
-  padding: $common-padding;
+  background-color: $h-primary;
+  border-radius:$h-border-radius;
+  // padding: $common-padding;
 }

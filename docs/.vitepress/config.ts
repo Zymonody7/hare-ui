@@ -28,14 +28,14 @@ const sidebar: DefaultTheme.Sidebar = {
 }
 
 export default defineConfig({
-  title: 'yyg-admin-ui',
-  description: 'YYG Vue3企业级中后台组件库',
+  title: 'hare-ui',
+  description: 'Hare Vue3企业级中后台组件库',
   lang: 'cn-ZH',
   base: '/',
   lastUpdated: true,
   themeConfig: {
     logo: '/logo.png',
-    siteTitle: 'yyg-admin-ui',
+    siteTitle: 'hare-ui',
     outline: 3,
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
