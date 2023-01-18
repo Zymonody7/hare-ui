@@ -1,0 +1,76 @@
+@import '../../base/var.module';
+
+@mixin button-base {
+  // 布局
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  // 元素
+  border: 1px solid transparent;
+  height: 28px;
+  padding: 0 20px;
+  background-color: transparent;
+  border-radius: $h-border-radius;
+
+  // 文本属性
+  outline: 0;
+  line-height: 1.5;
+  white-space: nowrap;
+  cursor: pointer;
+
+  // 文字样式
+  font-size: $h-font-size-md;
+
+  // 其他样式
+  transition: background-color $h-animation-duration-slow $h-animation-ease-in-out-smooth,
+    border-color $h-animation-duration-slow $h-animation-ease-in-out-smooth,
+    color $h-animation-duration-slow $h-animation-ease-in-out-smooth;
+
+  // 禁用状态
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  &.h-button--block {
+    display: block;
+    width: 100%;
+  }
+
+  &.h-button--loading {
+    // @apply 
+  }
+}
+
+@mixin button-variant($variant, $pseudo: false) {
+
+  @each $key,
+  $value in $variant {
+
+    // 第一层是多态的类型
+    &.h-button--#{$key} {
+
+      @each $item-key,
+      $item-value in $value {
+
+        // 第二层是多态类型下的样式
+        @if $pseudo {
+
+          // 如果是伪类就继续第三层
+          &:#{$item-key} {
+
+            @each $sub-item-key,
+            $sub-item-value in $item-value {
+              // 第三层是伪类的样式
+              #{$sub-item-key}: $sub-item-value;
+            }
+          }
+        }
+
+        @else {
+          // 不是伪类就直接设置样式
+          #{$item-key}: $item-value;
+        }
+      }
+    }
+  }
+}

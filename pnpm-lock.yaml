@@ -99,6 +99,12 @@ importers:
       vite: 4.0.4
       vue-tsc: 1.0.24_typescript@4.9.4
 
+  packages/button:
+    specifiers:
+      '@hare-ui/utils': workspace:^1.0.0
+    dependencies:
+      '@hare-ui/utils': link:../utils
+
   packages/foo:
     specifiers:
       '@hare-ui/utils': workspace:^1.0.0

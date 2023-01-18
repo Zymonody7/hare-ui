@@ -37,9 +37,7 @@ export default defineConfig({
     logo: '/logo.png',
     siteTitle: 'hare-ui',
     outline: 3,
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ],
+    socialLinks: [{ icon: 'github', link: '#' }],
     nav,
     sidebar
   },

@@ -1,12 +1,13 @@
 import { ExtractPropTypes, PropType } from 'vue'
-export type IButtonType = 'primary' | 'secondary' | 'text'
+import { EmitType } from '../../types'
+export type IButtonType = 'primary' | 'default' | 'text' | 'error'
 export type IButtonSize = 'small' | 'medium' | 'large'
 
 // button中的props定义
 export const buttonProps = {
   type: {
     type: String as PropType<IButtonType>,
-    default: 'secondary'
+    default: 'default'
   },
   size: {
     type: String as PropType<IButtonSize>,
@@ -31,11 +32,10 @@ export const buttonProps = {
   attrType: {
     type: String as PropType<'button' | 'submit' | 'reset'>,
     default: 'button'
+  },
+  onClick: {
+    type: [Function, Array] as PropType<EmitType<(e: MouseEvent) => void>>
   }
-  // just for jsx
-  // onClick: {
-  //   type: [Function, Array] as PropType<EmitType<(e: MouseEvent) => void>>
-  // }
 } as const
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>

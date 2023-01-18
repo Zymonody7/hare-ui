@@ -1,11 +1,11 @@
 ---
 layout: home
 
-title: YYG-DEMO-UI
+title: Hare-UI
 editLink: true
 lastUpdated: true
 hero:
-  name: hare-ui
+  name: Hare-UI
   text: Hare Vue3企业级中后台组件库
   tagline: 组件库描述 / SLOGAN
   image:
@@ -17,7 +17,7 @@ hero:
       link: /guide/
     - theme: alt
       text: 组件
-      link: /components/foo
+      link: /components/button
 features:
   - icon: 🔨
     title: 功能/特点 1

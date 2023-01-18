@@ -1,0 +1,72 @@
+// 所有不同type按钮自定义样式
+@import '../../base/var.module';
+
+// 按钮类型的配置
+$type: (
+  primary: (color: $h-light-text,
+    background-color: $h-primary ),
+  info: (color: $h-light-text,
+    background-color: $h-info ),
+  default: (color: $h-text,
+    background-color: $h-block,
+    border-color: $h-line ),
+  text: (padding: 0,
+    color: $h-brand-active ),
+  error: (color: $h-light-text,
+    background-color: $h-error ),
+  warning: (color: $h-light-text,
+    background-color: $h-warning ),
+);
+
+// 伪类的配置
+$pseudo: (
+  primary: (hover: (background-color: $h-primary-hover ),
+    focus: (background-color: $h-primary-hover ),
+    active: (background-color: $h-primary-active ),
+    disabled: (color: $h-disabled-text,
+      background-color: $h-primary-disabled,
+      border: none)),
+  info: (hover: (background-color: $h-info-hover ),
+    focus: (background-color: $h-info-hover ),
+    active: (background-color: $h-info-active ),
+    disabled: (color: $h-disabled-text,
+      background-color: $h-info-disabled,
+      border: none)),
+  default: (hover: (border-color: $h-form-control-line-active,
+      color: $h-brand-active ),
+    focus: (border-color: $h-form-control-line-active,
+      color: $h-brand-active ),
+    active: (border-color: $h-form-control-line-active,
+      color: $h-brand-active ),
+    disabled: (color: $h-disabled-text,
+      background-color: $h-disabled-bg,
+      border: 1px solid $h-disabled-line )),
+  text: (hover: (color: $h-brand-active-focus ),
+    focus: (color: $h-brand-active-focus ),
+    active: (color: $h-brand-active-focus ),
+    disabled: (color: $h-disabled-text )),
+  error: (hover: (background-color: $h-error-hover ),
+    focus: (background-color: $h-error-hover ),
+    active: (background-color: $h-error-active ),
+    disabled: (color: $h-disabled-text,
+      background-color: $h-error-disabled,
+      border: none)),
+  warning: (hover: (background-color: $h-warning-hover ),
+    focus: (background-color: $h-warning-hover ),
+    active: (background-color: $h-warning-active ),
+    disabled: (color: $h-disabled-text,
+      background-color: $h-warning-disabled,
+      border: none)),
+);
+
+// 按钮尺寸
+$size: (
+  small: (height: 24px,
+    padding: 0 16px,
+    font-size: $h-font-size-sm ),
+  medium: (height: 32px,
+    font-size: $h-font-size-md ),
+  large: (height: 40px,
+    padding: 0 24px,
+    font-size: $h-font-size-lg )
+);
