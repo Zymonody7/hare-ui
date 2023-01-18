@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "@hare-ui/button": "workspace:^1.0.0",
-    "@hare-ui/foo": "workspace:^1.0.0"
+    "@hare-ui/foo": "workspace:^1.0.0",
+    "@hare-ui/icon": "workspace:^1.0.0"
   },
   "devDependencies": {
     "rimraf": "^4.1.0",

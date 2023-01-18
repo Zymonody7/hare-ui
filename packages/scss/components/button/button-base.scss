@@ -35,10 +35,6 @@
     display: block;
     width: 100%;
   }
-
-  &.h-button--loading {
-    // @apply 
-  }
 }
 
 @mixin button-variant($variant, $pseudo: false) {
