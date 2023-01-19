@@ -125,6 +125,8 @@ importers:
     specifiers:
       '@hare-ui/button': workspace:^1.0.0
       '@hare-ui/foo': workspace:^1.0.0
+      '@hare-ui/form': workspace:^1.0.0
+      '@hare-ui/form-item': workspace:^1.0.0
       '@hare-ui/icon': workspace:^1.0.0
       '@hare-ui/menu': workspace:^1.0.0
       '@hare-ui/menu-item': workspace:^1.0.0
@@ -133,6 +135,8 @@ importers:
     dependencies:
       '@hare-ui/button': link:../button
       '@hare-ui/foo': link:../foo
+      '@hare-ui/form': link:../form
+      '@hare-ui/form-item': link:../form-item
       '@hare-ui/icon': link:../icon
       '@hare-ui/menu': link:../menu
       '@hare-ui/menu-item': link:../menu-item

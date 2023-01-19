@@ -12,6 +12,8 @@
   "dependencies": {
     "@hare-ui/button": "workspace:^1.0.0",
     "@hare-ui/foo": "workspace:^1.0.0",
+    "@hare-ui/form": "workspace:^1.0.0",
+    "@hare-ui/form-item": "workspace:^1.0.0",
     "@hare-ui/icon": "workspace:^1.0.0",
     "@hare-ui/menu": "workspace:^1.0.0",
     "@hare-ui/menu-item": "workspace:^1.0.0"

@@ -3,8 +3,9 @@ import { EmitType } from '../../types'
 
 export type MenuModeType = 'horizontal' | 'vertical'
 export type MenuOnSelect = (e: number) => void
-interface MenuProject {
+export interface IMenuProvide {
   index: Number
+  onSelect?: MenuOnSelect
 }
 export const menuProps = {
   activeIndex: {
@@ -16,7 +17,7 @@ export const menuProps = {
     default: 'horizontal'
   },
   onSelect: {
-    type: [Function, Array] as PropType<EmitType<MenuOnSelect>>
+    type: Function as PropType<(e: number) => null>
   }
 } as const
 

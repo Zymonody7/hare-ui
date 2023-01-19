@@ -1,4 +1,4 @@
-import { computed, defineComponent, toRefs } from 'vue'
+import { computed, defineComponent, toRefs, inject } from 'vue'
 import { menuItemProps } from './types'
 
 const NAME = 'h-menu-item'
@@ -8,6 +8,8 @@ export default defineComponent({
   props: menuItemProps,
   setup (props, { slots }) {
     const { index, disabled } = toRefs(props)
+    const func = inject('index', (index) => { }, false)
+
     const classes = computed(() => [
       NAME,
       `${ disabled.value ? `${ NAME }--disabled` : '' }`
