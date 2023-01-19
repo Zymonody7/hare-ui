@@ -126,17 +126,27 @@ importers:
       '@hare-ui/button': workspace:^1.0.0
       '@hare-ui/foo': workspace:^1.0.0
       '@hare-ui/icon': workspace:^1.0.0
+      '@hare-ui/menu': workspace:^1.0.0
+      '@hare-ui/menu-item': workspace:^1.0.0
       rimraf: ^4.1.0
       vite-plugin-dts: ^1.7.1
     dependencies:
       '@hare-ui/button': link:../button
       '@hare-ui/foo': link:../foo
       '@hare-ui/icon': link:../icon
+      '@hare-ui/menu': link:../menu
+      '@hare-ui/menu-item': link:../menu-item
     devDependencies:
       rimraf: 4.1.0
       vite-plugin-dts: 1.7.1
 
   packages/icon:
+    specifiers:
+      '@hare-ui/utils': workspace:^1.0.0
+    dependencies:
+      '@hare-ui/utils': link:../utils
+
+  packages/menu-item:
     specifiers:
       '@hare-ui/utils': workspace:^1.0.0
     dependencies:

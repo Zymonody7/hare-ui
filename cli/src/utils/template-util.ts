@@ -96,11 +96,10 @@ export default ${upCamelName}
  * scss 文件模板
  */
 export const scssTemplate = (lineNameWithPrefix: string): string => {
-  return `@import "../tools";
-@import "../acss/mp";
-@import "../base/var.module";
+  return `
+@import "../../base/var.module";
 
-@include b('${lineNameWithPrefix}') {
+.${lineNameWithPrefix} {
 }
 `
 }

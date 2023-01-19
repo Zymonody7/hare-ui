@@ -17,6 +17,8 @@ module.exports = {
     'padded-blocks': 0,
     'no-redeclare': 0,
     'space-before-function-paren': 0,
-    'no-undef': 0
+    'no-undef': 1,
+    'no-unused-vars': 1,
+    'template-curly-spacing': 0
   }
 }

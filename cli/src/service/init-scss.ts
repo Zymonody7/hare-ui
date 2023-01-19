@@ -9,7 +9,8 @@ const updateComponentScssIndex = (scssRootPath: string, lineName: string) => {
 
   const content = fs.readFileSync(indexScssPath).toString()
   const newContent =
-    content.substring(0, content.length) + `@use "${lineName}.module";\n`
+    content.substring(0, content.length) +
+    `@use "./${lineName}/${lineName}.module";\n`
   fs.writeFileSync(indexScssPath, newContent)
 }
 
@@ -28,8 +29,9 @@ export const initScss = (componentInfo: ComponentInfo) =>
       // 1. 创建组件的 scss 文件
       const componentScssPath = path.resolve(
         scssRootPath,
-        `components/_${lineName}.module.scss`
+        `components/${lineName}/_${lineName}.module.scss`
       )
+      fs.mkdirSync(path.resolve(scssRootPath, `components/${lineName}`))
       fs.writeFileSync(componentScssPath, scssTemplate(lineNameWithPrefix))
 
       // 2. 在组件库 scss 入口文件 （packages/components/index.scss）引入上面创建的文件
