@@ -14,16 +14,6 @@ export default defineComponent({
         onSelect.value(index)
       }
     }
-    const clickProvide: IMenuProvide = {
-      index: activeIndex.value ? activeIndex.value : 0,
-      onSelect: handleClick
-    }
-
-    provide('index', (index) => {
-      handleClick(index)
-      console.log(index)
-    })
-
     const classes = computed(() => [
       NAME,
       `${ mode.value === 'horizontal' ? ` ${ NAME }--horizontal ` : ` ${ NAME }--vertical ` }`

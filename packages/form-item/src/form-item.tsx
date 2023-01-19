@@ -10,8 +10,8 @@ export default defineComponent({
   props: formItemProps,
   setup(props: FormItemProps, { slots }) {
     const errorMsg = ref('')
-    const showErrorMsg = ref(false) 
-    // 注入label_data,生成动态样式
+    const showErrorMsg = ref(false)
+    // 注入label_data,生成动态label样式
     const labelData = inject('LABEL_DATA') as ComputedRef<LabelData>
     const layoutClasses = computed(() => [
       ITEM_CLASS,
@@ -27,25 +27,26 @@ export default defineComponent({
     // 做校验用的数据和校验规则由上级(form)提供
     const formCtx = inject(formContextToken)
     const validate = () => {
-      const itemRules = formCtx.rules[props.field] || undefined
       if (!formCtx) {
-        console.warn('请在h-form中使用h-form-item');
+        console.warn('请在h-form中使用h-form-item')
         return Promise.reject('请在h-form中使用h-form-item')
       }
       if (!props.field) {
-        console.warn('如果需要对数据进行校验,请设置field属性');
+        console.warn('如果需要对数据进行校验,请设置field属性')
+        return Promise.reject('请在h-form中使用h-form-item')
       }
       // 不需要校验
       if (!formCtx.rules) {
-        return Promise.resolve({ result:true })
+        return Promise.resolve({ result: true })
       }
+      const itemRules = formCtx?.rules[props.field]
       if (!itemRules) {
-        return Promise.resolve({ result:true })
+        return Promise.resolve({ result: true })
       }
       // 获取校验规则和数据
       const value = formCtx.model[props.field]
       // 执行校验，返回结果
-      const validator = new Validator({[props.field]:itemRules})
+      const validator = new Validator({ [props.field]: itemRules })
       return validator.validate({ [props.field]: value }, errors => {
         if (errors) {
           // 校验失败，显示错误信息

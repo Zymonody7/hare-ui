@@ -19,6 +19,8 @@ module.exports = {
     'space-before-function-paren': 0,
     'no-undef': 1,
     'no-unused-vars': 1,
-    'template-curly-spacing': 0
+    'template-curly-spacing': 0,
+    'n/no-callback-literal': 0,
+    'prefer-promise-reject-errors': 0
   }
 }

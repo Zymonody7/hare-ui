@@ -8,8 +8,6 @@ export default defineComponent({
   props: menuItemProps,
   setup (props, { slots }) {
     const { index, disabled } = toRefs(props)
-    const func = inject('index', (index) => { }, false)
-
     const classes = computed(() => [
       NAME,
       `${ disabled.value ? `${ NAME }--disabled` : '' }`

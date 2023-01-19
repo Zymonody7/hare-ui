@@ -4,6 +4,7 @@ import * as path from 'path'
 import {
   indexTemplate,
   sfcTemplate,
+  testTemplate,
   tsxTemplate,
   typesTemplate
 } from '../utils/template-util'
@@ -44,7 +45,7 @@ export const initComponent = (componentInfo: ComponentInfo) =>
 
         // 8. 创建 index.ts
         createIndex(componentInfo)
-
+        createTestDir(componentInfo)
         g('component init success')
 
         return resolve(componentInfo)
@@ -78,6 +79,12 @@ const createSrcIndex = (componentInfo: ComponentInfo) => {
   const fileFullName = `${componentInfo.fullPath}/src/${componentInfo.lineName}.${componentInfo.type}`
   fs.writeFileSync(fileFullName, content)
 }
+const createTestDir = (componentInfo: ComponentInfo) => {
+  const content = testTemplate(componentInfo)
+  const fileFullName = `${componentInfo.fullPath}/src/${componentInfo.lineName}.test.tsx`
+  fs.writeFileSync(fileFullName, content)
+}
+
 const createSrcTypes = (componentInfo: ComponentInfo) => {
   const content = typesTemplate(
     componentInfo.lowCamelName,

@@ -1,9 +1,7 @@
-<template>
-  <h-form-item></h-form-item>
-</template>
+<template></template>
 
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
 
 <style scoped lang="scss">
+
 </style>

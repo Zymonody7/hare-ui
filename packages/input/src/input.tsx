@@ -10,7 +10,7 @@ export default defineComponent({
   emits: ['update:modelValue'],
   setup(props, { emit }) {
     // 注入校验方法
-    const formItem = inject("FORM_ITEM_CTX") as FormItemContext
+    const formItem = inject('FORM_ITEM_CTX') as FormItemContext
     const onInput = (e: Event) => {
       const val = (e.target as HTMLInputElement).value
       emit('update:modelValue', val)

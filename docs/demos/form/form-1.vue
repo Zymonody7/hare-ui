@@ -1,5 +1,6 @@
 <template>
   <h-form
+    style="width: 50%"
     :model="model"
     :rules="rules"
     layout="vertical"

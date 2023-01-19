@@ -117,6 +117,12 @@ importers:
     dependencies:
       '@hare-ui/utils': link:../utils
 
+  packages/col:
+    specifiers:
+      '@hare-ui/utils': workspace:^1.0.0
+    dependencies:
+      '@hare-ui/utils': link:../utils
+
   packages/foo:
     specifiers:
       '@hare-ui/utils': workspace:^1.0.0
@@ -126,6 +132,7 @@ importers:
   packages/hare-ui:
     specifiers:
       '@hare-ui/button': workspace:^1.0.0
+      '@hare-ui/col': workspace:^1.0.0
       '@hare-ui/foo': workspace:^1.0.0
       '@hare-ui/form': workspace:^1.0.0
       '@hare-ui/form-item': workspace:^1.0.0
@@ -137,6 +144,7 @@ importers:
       vite-plugin-dts: ^1.7.1
     dependencies:
       '@hare-ui/button': link:../button
+      '@hare-ui/col': link:../col
       '@hare-ui/foo': link:../foo
       '@hare-ui/form': link:../form
       '@hare-ui/form-item': link:../form-item

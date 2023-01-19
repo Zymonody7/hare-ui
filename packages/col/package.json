@@ -1,0 +1,15 @@
+{
+  "name": "@hare-ui/col",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hare-ui/utils": "workspace:^1.0.0"
+  }
+}

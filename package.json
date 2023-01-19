@@ -4,6 +4,17 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "files": [
+    "./lib",
+    "package.json",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "require": "./lib/demo-ui-lib.umd.js",
+      "import": "./lib/demo-ui-lib.es.js"
+    }
+  },
   "scripts": {
     "dev:dev": "pnpm run -C example dev:dev",
     "dev:uat": "pnpm run -C example dev:uat",

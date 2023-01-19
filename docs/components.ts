@@ -6,5 +6,6 @@ export const components = [
   { text: 'MenuItem 导航菜单子元素', link: '/components/menu-item' },
   { text: 'Form 表单', link: '/components/form' },
   { text: 'FormItem 表单项', link: '/components/form-item' },
-  { text: 'Input 输入框', link: '/components/input' }
+  { text: 'Input 输入框', link: '/components/input' },
+  { text: 'Col 列', link: '/components/col' }
 ] // end
