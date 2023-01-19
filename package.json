@@ -19,7 +19,7 @@
     "gen:component": "pnpm run -C cli gen",
     "start:verdaccio": "pnpm verdaccio",
     "lint": "eslint \"{cli,packages,docs,example}/**/*.{js,ts,vue,jsx,tsx}\" --fix",
-    "test": "pnpm run -C packages/hare-ui test"
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
