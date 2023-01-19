@@ -1,12 +1,8 @@
-@import "../tools";
-@import "../acss/mp";
 @import "../base/var.module";
 
-@include b('h-foo') {
+.h-foo{
   color: $h-primary;
-
-  @include e('description') {
+  .description{
     color: #333333;
-    @extend .mv-20;
   }
 }
