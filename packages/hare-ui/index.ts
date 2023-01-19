@@ -8,11 +8,13 @@ import Form from '@hare-ui/form'
 import FormItem from '@hare-ui/form-item'
 import Input from '@hare-ui/input'
 import Switch from '@hare-ui/switch'
+import Alert from '@hare-ui/alert'
 // import component end
 import '../scss/index.scss'
 
 const components = [Foo, Button, Icon, Menu, MenuItem, Form, FormItem, Inpu,
-  Switch
+  Switch,
+  Alert
 ] // components
 
 // 全局动态添加组件

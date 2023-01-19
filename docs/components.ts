@@ -7,5 +7,6 @@ export const components = [
   { text: 'Form 表单', link: '/components/form' },
   { text: 'FormItem 表单项', link: '/components/form-item' },
   { text: 'Input 输入框', link: '/components/input' },
-  { text: 'Switch 开关', link: '/components/switch' }
+  { text: 'Switch 开关', link: '/components/switch' },
+  { text: 'Alert 警告', link: '/components/alert' }
 ] // end

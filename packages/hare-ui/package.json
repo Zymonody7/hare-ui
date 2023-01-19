@@ -10,6 +10,7 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
+    "@hare-ui/alert": "workspace:^1.0.0",
     "@hare-ui/button": "workspace:^1.0.0",
     "@hare-ui/foo": "workspace:^1.0.0",
     "@hare-ui/form": "workspace:^1.0.0",
