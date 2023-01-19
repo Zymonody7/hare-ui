@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import * as path from 'path'
@@ -28,6 +29,16 @@ export default defineConfig({
           vue: 'Vue'
         }
       }
+    }
+  },
+  test: {
+    // jest like test apis
+    globals: true,
+    // 模拟dom环境
+    environment: 'happy-dom',
+    // 支持tsx
+    transformMode: {
+      web: [/.[tj]sx$/]
     }
   }
 })

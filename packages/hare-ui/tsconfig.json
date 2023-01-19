@@ -13,8 +13,9 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "declaration": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "types": ["vitest/globals"]
   },
-  "include": ["../**/*.ts", "../**/*.d.ts", "../**/*.tsx", "../**/*.vue"],
+  "include": ["../**/*.ts", "../**/*.d.ts", "../**/*.tsx", "../**/*.vue","../**/*.test.tsx"],
   "exclude": ["../**/node_modules/"]
 }

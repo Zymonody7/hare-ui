@@ -5,7 +5,8 @@
   "author": "Zymonody",
   "main": "index.ts",
   "scripts": {
-    "build": "rimraf ../../lib && vue-tsc --noEmit && vite build"
+    "build": "rimraf ../../lib && vue-tsc --noEmit && vite build",
+    "test": "jest"
   },
   "keywords": [],
   "license": "ISC",
