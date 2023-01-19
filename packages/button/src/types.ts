@@ -4,6 +4,7 @@ export type IButtonType = 'primary' | 'default' | 'text' | 'error'
 export type IButtonSize = 'small' | 'medium' | 'large'
 
 // button中的props定义
+
 export const buttonProps = {
   type: {
     type: String as PropType<IButtonType>,
