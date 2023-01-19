@@ -1,0 +1,15 @@
+
+@import "../../base/var.module";
+
+.h-input {
+  &__wrapper {
+    padding: $spacing-2 $spacing-4;
+    border-radius: $radius-medium;
+    border: 1px solid #666;
+    transition: border $h-animation-duration-slow $h-animation-ease-in-out-smooth;
+    &.hover,
+    &:hover{
+      border: 1px solid $h-primary;
+    }
+  }
+}

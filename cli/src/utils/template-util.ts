@@ -42,10 +42,9 @@ const NAME = '${lineNameWithPrefix}'
 export default defineComponent({
   name: NAME,
   props: ${lowCamelName}Props,
-  setup (props, {slots}) {
-    console.log(props, slots)
+  setup (props, { slots }) {
     return () => (
-      <div class={NAME}>
+      <div class={ NAME }>
         <div>
           ${lineNameWithPrefix}
         </div>

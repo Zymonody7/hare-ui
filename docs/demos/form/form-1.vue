@@ -1,19 +1,48 @@
 <template>
-  <h-form :model="model" labelSize="sm" labelAlign="center">
-    <h-form-item label="用户名">
-      <input style="border: 1px solid #000" type="text">
+  <h-form
+    :model="model"
+    :rules="rules"
+    layout="vertical"
+    labelSize="sm"
+    labelAlign="center"
+    @submit="onSubmit"
+    ref="loginForm"
+  >
+    <h-form-item label="用户名" field="username">
+      <h-input v-model="model.username" type="text" />
+    </h-form-item>
+    <h-form-item label="密码" field="password">
+      <h-input v-model="model.password" type="text" />
+    </h-form-item>
+    <h-form-item>
+      <h-button type="primary">登录</h-button>
     </h-form-item>
   </h-form>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
-
+import { ref } from "vue";
 const model = ref({
-  user: '张三'
-})
+  username: "张三",
+  password: "123456",
+});
+const rules = ref({
+  username: [{ required: true, message: "用户名不能为空" }],
+  password: [
+    { required: true, message: "密码不能为空" },
+    { min: 6, max: 10, message: "密码长度在6-10之间" },
+  ],
+});
+const loginForm = ref(null);
+const onSubmit = () => {
+  loginForm.value.validate((valid) => {
+    if (valid) {
+      alert("登录成功");
+    } else {
+      alert("校验失败");
+    }
+  });
+};
 </script>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

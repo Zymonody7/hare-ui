@@ -6,10 +6,11 @@ import Menu from '@hare-ui/menu'
 import MenuItem from '@hare-ui/menu-item'
 import Form from '@hare-ui/form'
 import FormItem from '@hare-ui/form-item'
+import Input from '@hare-ui/input'
 // import component end
 import '../scss/index.scss'
 
-const components = [Foo, Button, Icon, Menu, MenuItem, Form, FormItem] // components
+const components = [Foo, Button, Icon, Menu, MenuItem, Form, FormItem, Input] // components
 
 // 全局动态添加组件
 const install = (app: App): void => {
