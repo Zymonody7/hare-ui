@@ -9,13 +9,19 @@ export default defineComponent({
   props: formProps,
   emits: ['submit'],
   setup(props: FormProps, { slots, emit, expose }) {
-    // 向下提供label_data
+    /**
+     * 布局
+     * @param layout 横向布局和纵向布局
+     * @param labelSize 标签大小
+     * @param labelAlign 标签对齐方式
+    */
+    // label属性
     const labelData = computed(() => ({
       layout: props.layout,
       labelSize: props.labelSize,
       labelAlign: props.labelAlign
     }))
-    // label属性
+    // 向下提供label_data
     provide('LABEL_DATA', labelData)
     // 使用Set存放待校验的items
     const formItems = new Set<FormItemContext>()

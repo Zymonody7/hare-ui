@@ -1,22 +1,29 @@
-import { computed, defineComponent, toRefs, inject } from 'vue'
-import { menuItemProps } from './types'
+import { computed, defineComponent, toRefs, inject, Ref } from 'vue'
+import { MenuContext, menuItemProps } from './types'
 
 const NAME = 'h-menu-item'
-
+const CLASSNAME = 'h-menu__item'
 export default defineComponent({
   name: NAME,
   props: menuItemProps,
   setup (props, { slots }) {
     const { index, disabled } = toRefs(props)
+    const menuContext = inject('MENU_CONTEXT') as MenuContext
+    const handleClick = () => {
+      if (menuContext.onSelect && !disabled.value) {
+        menuContext.onSelect(index.value)
+        console.log('context.index', menuContext.index)
+        console.log('index.value', index.value)
+      }
+    }
     const classes = computed(() => [
-      NAME,
-      `${ disabled.value ? `${ NAME }--disabled` : '' }`
+      CLASSNAME,
+      `${disabled.value ? `${CLASSNAME}--disabled` : ''}`,
+      `${menuContext.index.value === index.value ? `${CLASSNAME}--active` : ''}`
     ])
-    const defaultSlot = slots.default ? slots.default() : ''
-
     return () => (
-      <li class={classes.value}>
-        {defaultSlot}
+      <li class={classes.value} onClick={handleClick}>
+        {slots?.default()}
       </li>
     )
   }

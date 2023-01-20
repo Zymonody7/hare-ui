@@ -11,6 +11,9 @@ export default defineComponent({
   setup(props: FormItemProps, { slots }) {
     const errorMsg = ref('')
     const showErrorMsg = ref(false)
+    /**
+     * 布局
+     */
     // 注入label_data,生成动态label样式
     const labelData = inject('LABEL_DATA') as ComputedRef<LabelData>
     const layoutClasses = computed(() => [
@@ -23,6 +26,9 @@ export default defineComponent({
       [`${LABEL_CLASS}--${labelData.value.labelAlign}`]: labelData.value.layout === 'horizontal',
       [`${LABEL_CLASS}--${labelData.value.labelSize}`]: labelData.value.layout === 'horizontal'
     }))
+    /**
+     * 表单校验
+     */
     // 实现validator方法给下级
     // 做校验用的数据和校验规则由上级(form)提供
     const formCtx = inject(formContextToken)
@@ -39,16 +45,20 @@ export default defineComponent({
       if (!formCtx.rules) {
         return Promise.resolve({ result: true })
       }
-      const itemRules = formCtx?.rules[props.field]
+      // 获取每个form-item的校验规则
+      const itemRules = formCtx.rules[props.field]
       if (!itemRules) {
         return Promise.resolve({ result: true })
       }
-      // 获取校验规则和数据
+      // 获取数据
       const value = formCtx.model[props.field]
       // 执行校验，返回结果
       const validator = new Validator({ [props.field]: itemRules })
       return validator.validate({ [props.field]: value }, errors => {
         if (errors) {
+          /**
+           * @todo mode:blur
+           */
           // 校验失败，显示错误信息
           showErrorMsg.value = true
           errorMsg.value = errors[0].message || '校验错误'
@@ -59,6 +69,7 @@ export default defineComponent({
         }
       })
     }
+    // 将校验函数传到下一级
     const formItemCtx = {
       validate
     }

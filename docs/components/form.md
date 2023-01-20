@@ -2,6 +2,8 @@
 
 ## 基本使用
 
+<preview path="../demos/form/form-1.vue" title="基本使用" description=" "></preview>
+
 
 ## 组件 API
 

@@ -18,7 +18,7 @@ export default defineComponent({
     }
     return () => (
       <div class="h-input__wrapper">
-        <input class="h-input__input" value={ props.modelValue } onInput={onInput} type={ props.type } />
+        <input class="h-input__input" placeholder={ props.placeholderValue } value={ props.modelValue } onInput={onInput} type={ props.type } />
       </div>
     )
   }

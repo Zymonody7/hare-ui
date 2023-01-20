@@ -1,14 +1,6 @@
 <template>
-  <h-form
-    style="width: 50%"
-    :model="model"
-    :rules="rules"
-    layout="vertical"
-    labelSize="sm"
-    labelAlign="center"
-    @submit="onSubmit"
-    ref="loginForm"
-  >
+  <h-form style="width: 50%" :model="model" :rules="rules" layout="vertical" labelSize="sm" labelAlign="center"
+    @submit="onSubmit" ref="loginForm">
     <h-form-item label="用户名" field="username">
       <h-input v-model="model.username" type="text" />
     </h-form-item>
@@ -36,7 +28,7 @@ const rules = ref({
 });
 const loginForm = ref(null);
 const onSubmit = () => {
-  loginForm.value.validate((valid) => {
+  loginForm.value.validate((valid: Boolean) => {
     if (valid) {
       alert("登录成功");
     } else {
@@ -46,4 +38,6 @@ const onSubmit = () => {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+
+</style>

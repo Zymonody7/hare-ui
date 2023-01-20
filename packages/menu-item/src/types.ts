@@ -1,9 +1,10 @@
 import { ExtractPropTypes } from 'vue'
-
+export type { MenuContext } from '../../menu/src/types'
+export type MenuOnSelect = (e: string) => void
 export const menuItemProps = {
   index: {
-    type: Number,
-    default: 0
+    type: String,
+    default: ''
   },
   disabled: {
     type: Boolean,

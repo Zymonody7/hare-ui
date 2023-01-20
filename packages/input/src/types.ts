@@ -5,6 +5,10 @@ export const inputProps = {
     type: String,
     default: ''
   },
+  placeholderValue: {
+    type: String,
+    default: ''
+  },
   type: {
     type: String,
     default: 'text'

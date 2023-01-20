@@ -1,21 +1,43 @@
 <template>
-  <div class="site">
-    <h1>组件库测试站点 hare-demo-ui</h1>
-    <p>测试站点主要用于开发过程中测试组件，即在开发过程中由业务驱动组件开发。</p>
-    <h-button type="error" disabled></h-button>
-    <h-icon name="vue"></h-icon>
-    <h-menu>
-      <h-menu-item>123</h-menu-item>
-    </h-menu>
-    <h-menu-item>123</h-menu-item>
-  </div>
+  <h-form style='width: 50%' :model='model' :rules='rules' layout='vertical' labelSize='sm' labelAlign='center'
+    @submit='onSubmit' ref='loginForm'>
+    <h-form-item label='用户名' field='username'>
+      <h-input v-model='model.username' type='text' />
+    </h-form-item>
+    <h-form-item label='密码' field='password'>
+      <h-input v-model='model.password' type='text' />
+    </h-form-item>
+    <h-form-item>
+      <h-button type='primary'>登录</h-button>
+    </h-form-item>
+  </h-form>
 </template>
-<script setup lang="ts">
 
+<script lang='ts' setup>
+import { ref } from 'vue'
+const model = ref({
+  username: '张三',
+  password: '123456'
+})
+const rules = ref({
+  username: [{ required: true, message: '用户名不能为空' }],
+  password: [
+    { required: true, message: '密码不能为空' },
+    { min: 6, max: 10, message: '密码长度在6-10之间' }
+  ]
+})
+const loginForm = ref()
+const onSubmit = () => {
+  loginForm.value.validate((valid: Boolean) => {
+    if (valid) {
+      alert('登录成功')
+    } else {
+      alert('校验失败')
+    }
+  })
+}
 </script>
 
-<style scoped lang="scss">
-.site {
-  padding: 20px;
-}
+<style scoped lang='scss'>
+
 </style>
